@@ -1,7 +1,8 @@
 extends Area2D
-class_name PlayerProjectile
+class_name Projectile
 
 @export var speed: float = 400
+var type: String
 var movement_destination: Vector2
 
 func _physics_process(delta):

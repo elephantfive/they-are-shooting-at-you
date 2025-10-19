@@ -1,10 +1,11 @@
 extends CharacterBody2D
+var type: String = 'player'
 var speed: float = 400.0
 var movement_direction: Vector2
 var acceleration: float = 5.0
 var deceleration: float = 10.0
 var abilities: Array = ['basic_shoot']
-const PLAYER_PROJECTILE = preload("uid://bukkivmhj31wo")
+const BASIC_PROJECTILE = preload("uid://d0uslmf1fd1p6")
 
 
 func _input(event):
@@ -25,7 +26,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func basic_shoot():
-	var new_projectile: PlayerProjectile = PLAYER_PROJECTILE.instantiate()
+	var new_projectile: Projectile = BASIC_PROJECTILE.instantiate()
 	get_parent().add_child(new_projectile)
+	new_projectile.type = 'player'
 	new_projectile.global_position = global_position
 	new_projectile.movement_destination = (get_global_mouse_position() - global_position) * 100

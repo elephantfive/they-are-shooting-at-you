@@ -1,6 +1,6 @@
 extends Enemy
 @onready var player = %Player
-const ENEMY_PROJECTILE = preload("uid://d0uslmf1fd1p6")
+const BASIC_PROJECTILE = preload("uid://d0uslmf1fd1p6")
 
 var movement_direction: Vector2
 
@@ -22,9 +22,8 @@ func _on_firing_timer_timeout():
 	fire()
 
 func fire():
-	var new_proj: EnemyProjectile = ENEMY_PROJECTILE.instantiate()
-	get_parent().add_child(new_proj)
-	new_proj.global_position = global_position
-	print(str(player.global_position))
-	new_proj.movement_destination = (player.global_position - global_position) * 100
-	print(str(new_proj.movement_destination))
+	var new_projectile: Projectile = BASIC_PROJECTILE.instantiate()
+	get_parent().add_child(new_projectile)
+	new_projectile.type = 'enemy'
+	new_projectile.global_position = global_position
+	new_projectile.movement_destination = (player.global_position - global_position) * 100
