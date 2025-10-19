@@ -28,4 +28,4 @@ func basic_shoot():
 	var new_projectile: PlayerProjectile = PLAYER_PROJECTILE.instantiate()
 	get_parent().add_child(new_projectile)
 	new_projectile.global_position = global_position
-	new_projectile.movement_destination = get_global_mouse_position()
+	new_projectile.movement_destination = (get_global_mouse_position() - global_position) * 100
