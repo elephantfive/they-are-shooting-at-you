@@ -25,5 +25,6 @@ func fire():
 	var new_projectile: Projectile = BASIC_PROJECTILE.instantiate()
 	get_parent().add_child(new_projectile)
 	new_projectile.type = 'enemy'
+	new_projectile.damage = 1
 	new_projectile.global_position = global_position
 	new_projectile.movement_destination = (player.global_position - global_position) * 100

@@ -12,6 +12,6 @@ func _on_area_entered(area):
 func _on_body_entered(body):
 	if type == 'enemy':
 		if body.get('type') != null:
-			body.health -= 1
+			body.health -= damage
 			body.update()
 			queue_free()

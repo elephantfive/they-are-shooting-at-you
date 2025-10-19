@@ -1,6 +1,7 @@
 extends Area2D
 class_name Projectile
 
+@export var damage: int
 @export var speed: float = 400
 var type: String
 var movement_destination: Vector2
