@@ -29,6 +29,12 @@ color = Color(1, 0, 0, 1)
 shape = SubResource("RectangleShape2D_ia184")
 
 [node name="MovementTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="FiringTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]
+[connection signal="timeout" from="FiringTimer" to="." method="_on_firing_timer_timeout"]
