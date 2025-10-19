@@ -6,6 +6,7 @@
 size = Vector2(40, 40)
 
 [node name="Player" type="CharacterBody2D"]
+visible = false
 motion_mode = 1
 script = ExtResource("1_8afob")
 
