@@ -9,5 +9,13 @@
 unique_name_in_owner = true
 position = Vector2(510, 347)
 
+[node name="HUD" type="CanvasLayer" parent="Player"]
+unique_name_in_owner = true
+
+[node name="Health" type="Label" parent="Player/HUD"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="BasicEnemy" parent="." instance=ExtResource("2_sugp2")]
 position = Vector2(798, 224)

@@ -4,9 +4,12 @@ var speed: float = 400.0
 var movement_direction: Vector2
 var acceleration: float = 5.0
 var deceleration: float = 10.0
+var health: int = 10
 var abilities: Array = ['basic_shoot']
 const BASIC_PROJECTILE = preload("uid://d0uslmf1fd1p6")
 
+func _ready():
+	update()
 
 func _input(event):
 	if event.is_action('movement'):
@@ -31,3 +34,6 @@ func basic_shoot():
 	new_projectile.type = 'player'
 	new_projectile.global_position = global_position
 	new_projectile.movement_destination = (get_global_mouse_position() - global_position) * 100
+
+func update():
+	%Health.text = "Health: " + str(health)
