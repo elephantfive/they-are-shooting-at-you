@@ -30,7 +30,7 @@ func _physics_process(delta):
 
 func basic_shoot():
 	var new_projectile: Projectile = BASIC_PROJECTILE.instantiate()
-	get_parent().add_child(new_projectile)
+	get_tree().get_root().add_child(new_projectile)
 	new_projectile.type = 'player'
 	new_projectile.global_position = global_position
 	new_projectile.movement_destination = (get_global_mouse_position() - global_position) * 100
