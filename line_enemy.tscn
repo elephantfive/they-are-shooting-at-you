@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://drkcuqm7f57dr"]
+
+[ext_resource type="PackedScene" uid="uid://bbxblh6xq6x8j" path="res://scenes/enemy/basic_enemy.tscn" id="1_rr4jx"]
+
+[node name="LineEnemy" type="Node2D"]
+
+[node name="BasicEnemy" parent="." instance=ExtResource("1_rr4jx")]
