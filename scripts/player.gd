@@ -6,6 +6,7 @@ var acceleration: float = 5.0
 var deceleration: float = 10.0
 var health: int = 10
 var abilities: Array = ['basic_shoot']
+var active_ability: String = abilities[0]
 const BASIC_PROJECTILE = preload("uid://d0uslmf1fd1p6")
 
 func _ready():
@@ -15,10 +16,12 @@ func _input(event):
 	if event.is_action('movement'):
 		movement_direction.x = Input.get_action_strength('right') - Input.get_action_strength('left')
 		movement_direction.y = Input.get_action_strength('down') - Input.get_action_strength('up')
+	if event.is_action_pressed('attack'):
+		call(active_ability)
 	if event.is_action('actions'):
 		for i in abilities.size():
 			if event.is_action_pressed(str(i)):
-				call(abilities[i])
+				active_ability = abilities[i]
 
 
 func _physics_process(delta):

@@ -17,6 +17,8 @@ func _on_movement_timer_timeout():
 	if movement_iterations < 10:
 		movement_direction = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0))
 	else:
+		collision_layer = 32 #Arbitrary value != 1
+		collision_mask = 32
 		if global_position.x > get_viewport_rect().size.x / 2:
 			movement_direction.x = 1
 		else:
